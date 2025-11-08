@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Connection Test</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <h1>Supabase Connection Debug</h1>
+    <div id="results"></div>
+    
+    <script>
+        const supabaseUrl = 'https://yvzdobyawqcrwwfwkiyf.supabase.co';
+        const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2emRvYnlhd3Fjcnd3ZndraXlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1NjgxNDUsImV4cCI6MjA3ODE0NDE0NX0.-XdmgNJhVawFaJ0my37k2_sJCKht6v_h9RHvQi1LhcA';
+        
+        console.log('Initializing Supabase client...');
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+        
+        const resultsDiv = document.getElementById('results');
+        
+        async function testConnection() {
+            try {
+                console.log('Testing Supabase connection...');
+                resultsDiv.innerHTML += '<p>🔄 Testing Supabase connection...</p>';
+                
+                // Test 1: Basic connection test
+                const { data, error } = await supabase
+                    .from('businesses')
+                    .select('count')
+                    .limit(1);
+                
+                if (error) {
+                    console.error('Connection test failed:', error);
+                    resultsDiv.innerHTML += `<p>❌ Connection test failed: ${error.message}</p>`;
+                    return;
+                }
+                
+                resultsDiv.innerHTML += '<p>✅ Database connection successful!</p>';
+                
+                // Test 2: Auth service test
+                console.log('Testing auth service...');
+                resultsDiv.innerHTML += '<p>🔄 Testing auth service...</p>';
+                
+                const { data: session } = await supabase.auth.getSession();
+                resultsDiv.innerHTML += '<p>✅ Auth service accessible!</p>';
+                
+                // Test 3: Test signup with dummy data
+                console.log('Testing signup process...');
+                resultsDiv.innerHTML += '<p>🔄 Testing signup process...</p>';
+                
+                const testEmail = `test-${Date.now()}@example.com`;
+                const testPassword = 'TestPassword123!';
+                
+                const { data: signupData, error: signupError } = await supabase.auth.signUp({
+                    email: testEmail,
+                    password: testPassword,
+                });
+                
+                if (signupError) {
+                    console.error('Signup test failed:', signupError);
+                    resultsDiv.innerHTML += `<p>❌ Signup test failed: ${signupError.message}</p>`;
+                    
+                    // Check specific error types
+                    if (signupError.message.includes('Invalid login credentials')) {
+                        resultsDiv.innerHTML += '<p>🔧 This might be a CORS or domain configuration issue.</p>';
+                    } else if (signupError.message.includes('Email not confirmed')) {
+                        resultsDiv.innerHTML += '<p>✅ Signup works, but email confirmation is required.</p>';
+                    } else if (signupError.message.includes('User already registered')) {
+                        resultsDiv.innerHTML += '<p>✅ Signup service is working (user exists).</p>';
+                    }
+                } else {
+                    resultsDiv.innerHTML += '<p>✅ Signup test successful!</p>';
+                    console.log('Signup successful:', signupData);
+                }
+                
+                // Test 4: Check if we can read from tables
+                console.log('Testing table access...');
+                resultsDiv.innerHTML += '<p>🔄 Testing database table access...</p>';
+                
+                const { data: businessData, error: businessError } = await supabase
+                    .from('businesses')
+                    .select('*')
+                    .limit(1);
+                
+                if (businessError) {
+                    console.error('Table access failed:', businessError);
+                    resultsDiv.innerHTML += `<p>❌ Table access failed: ${businessError.message}</p>`;
+                } else {
+                    resultsDiv.innerHTML += '<p>✅ Database tables accessible!</p>';
+                    console.log('Business data:', businessData);
+                }
+                
+            } catch (err) {
+                console.error('Unexpected error:', err);
+                resultsDiv.innerHTML += `<p>❌ Unexpected error: ${err.message}</p>`;
+            }
+        }
+        
+        // Run tests when page loads
+        testConnection();
+    </script>
+</body>
+</html>

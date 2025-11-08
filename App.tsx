@@ -23,6 +23,7 @@ import MapView from './components/MapView';
 import Invoices from './components/Invoices';
 import InvoiceDetails from './components/InvoiceDetails';
 import InvoiceEditor from './components/InvoiceEditor';
+import AuthCallback from './components/AuthCallback';
 
 
 const App: React.FC = () => {
@@ -34,6 +35,7 @@ const App: React.FC = () => {
             {/* Public routes */}
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/auth/callback" element={<AuthCallback />} />
 
             {/* Protected routes */}
             <Route path="/" element={
