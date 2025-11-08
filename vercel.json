@@ -1,0 +1,43 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev",
+  "env": {
+    "GEMINI_API_KEY": "@gemini_api_key",
+    "GOOGLE_MAPS_API_KEY": "@google_maps_api_key",
+    "VITE_SUPABASE_URL": "@supabase_url",
+    "VITE_SUPABASE_ANON_KEY": "@supabase_anon_key"
+  },
+  "build": {
+    "env": {
+      "GEMINI_API_KEY": "@gemini_api_key",
+      "GOOGLE_MAPS_API_KEY": "@google_maps_api_key",
+      "VITE_SUPABASE_URL": "@supabase_url",
+      "VITE_SUPABASE_ANON_KEY": "@supabase_anon_key"
+    }
+  },
+  "functions": {
+    "app/api/**": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Credentials", "value": "true" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
+        { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
