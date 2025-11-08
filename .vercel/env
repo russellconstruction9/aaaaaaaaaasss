@@ -1,0 +1,47 @@
+{
+  "production": {
+    "GEMINI_API_KEY": {
+      "value": "AIzaSyCWI3oIEOvx_MB1xVSmDweT-fShPhgyGpY",
+      "type": "secret",
+      "target": ["production", "preview", "development"],
+      "description": "Google Gemini AI API key for chat functionality"
+    },
+    "GOOGLE_MAPS_API_KEY": {
+      "value": "AIzaSyCgcu2OEs4a61Dw6MUGxv93609eNDVM3uI",
+      "type": "secret",
+      "target": ["production", "preview", "development"],
+      "description": "Google Maps API key for location services and map images"
+    },
+    "VITE_SUPABASE_URL": {
+      "value": "https://yvzdobyawqcrwwfwkiyf.supabase.co",
+      "type": "plain",
+      "target": ["production", "preview", "development"],
+      "description": "Supabase project URL - can be public"
+    },
+    "VITE_SUPABASE_ANON_KEY": {
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2emRvYnlhd3Fjcnd3ZndraXlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1NjgxNDUsImV4cCI6MjA3ODE0NDE0NX0.-XdmgNJhVawFaJ0my37k2_sJCKht6v_h9RHvQi1LhcA",
+      "type": "plain",
+      "target": ["production", "preview", "development"],
+      "description": "Supabase anonymous key - safe for client-side use"
+    },
+    "NODE_ENV": {
+      "value": "production",
+      "type": "plain",
+      "target": ["production"],
+      "description": "Node environment for production builds"
+    }
+  },
+  "preview": {
+    "NODE_ENV": {
+      "value": "preview",
+      "type": "plain",
+      "target": ["preview"],
+      "description": "Node environment for preview deployments"
+    }
+  },
+  "development": {
+    "NODE_ENV": {
+      "value": "development",
+      "type": "plain",
+      "target": ["development"],
+      "description": "Node environment for development"

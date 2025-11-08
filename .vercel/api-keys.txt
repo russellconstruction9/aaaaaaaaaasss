@@ -1,0 +1,28 @@
+# API Keys Configuration for Vercel
+# Your actual API keys - ready to copy to Vercel Dashboard
+
+# 🤖 GEMINI AI API KEY
+# From: https://aistudio.google.com/app/apikey
+GEMINI_API_KEY=AIzaSyCWI3oIEOvx_MB1xVSmDweT-fShPhgyGpY
+
+# 🗺️ GOOGLE MAPS API KEY  
+# From: https://console.cloud.google.com/apis/credentials
+GOOGLE_MAPS_API_KEY=AIzaSyCgcu2OEs4a61Dw6MUGxv93609eNDVM3uI
+
+# 🗄️ SUPABASE PROJECT URL
+# From: https://supabase.com/dashboard > Settings > API
+VITE_SUPABASE_URL=https://yvzdobyawqcrwwfwkiyf.supabase.co
+
+# 🔑 SUPABASE ANONYMOUS KEY
+# From: https://supabase.com/dashboard > Settings > API
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2emRvYnlhd3Fjcnd3ZndraXlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1NjgxNDUsImV4cCI6MjA3ODE0NDE0NX0.-XdmgNJhVawFaJ0my37k2_sJCKht6v_h9RHvQi1LhcA
+
+# ⚙️ NODE ENVIRONMENT (automatically set by Vercel)
+NODE_ENV=production
+
+# 📋 COPY TO VERCEL INSTRUCTIONS:
+# 1. Go to your Vercel project dashboard
+# 2. Navigate to Settings > Environment Variables
+# 3. Add each variable above (except NODE_ENV)
+# 4. Set Target: Production, Preview, Development
+# 5. Set Type: Secret for API keys, Plain Text for VITE_ variables

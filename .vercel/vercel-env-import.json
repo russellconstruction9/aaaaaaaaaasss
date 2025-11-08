@@ -1,0 +1,26 @@
+[
+  {
+    "name": "GEMINI_API_KEY",
+    "value": "AIzaSyCWI3oIEOvx_MB1xVSmDweT-fShPhgyGpY",
+    "type": "encrypted",
+    "target": ["production", "preview", "development"]
+  },
+  {
+    "name": "GOOGLE_MAPS_API_KEY", 
+    "value": "AIzaSyCgcu2OEs4a61Dw6MUGxv93609eNDVM3uI",
+    "type": "encrypted",
+    "target": ["production", "preview", "development"]
+  },
+  {
+    "name": "VITE_SUPABASE_URL",
+    "value": "https://yvzdobyawqcrwwfwkiyf.supabase.co", 
+    "type": "plain",
+    "target": ["production", "preview", "development"]
+  },
+  {
+    "name": "VITE_SUPABASE_ANON_KEY",
+    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2emRvYnlhd3Fjcnd3ZndraXlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1NjgxNDUsImV4cCI6MjA3ODE0NDE0NX0.-XdmgNJhVawFaJ0my37k2_sJCKht6v_h9RHvQi1LhcA",
+    "type": "plain", 
+    "target": ["production", "preview", "development"]
+  }
+]
