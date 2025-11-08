@@ -1,0 +1,61 @@
+{
+  "name": "Supabase Vercel Configuration",
+  "description": "Configuration settings for connecting Supabase with Vercel deployment",
+  "supabase": {
+    "project_id": "yvzdobyawqcrwwfwkiyf",
+    "project_url": "https://yvzdobyawqcrwwfwkiyf.supabase.co",
+    "anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2emRvYnlhd3Fjcnd3ZndraXlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1NjgxNDUsImV4cCI6MjA3ODE0NDE0NX0.-XdmgNJhVawFaJ0my37k2_sJCKht6v_h9RHvQi1LhcA",
+    "dashboard_url": "https://supabase.com/dashboard/project/yvzdobyawqcrwwfwkiyf"
+  },
+  "vercel": {
+    "repository": "russellconstruction9/aaaaaaaaaasss",
+    "production_url": "https://aaaaaaaaaasss.vercel.app",
+    "preview_url_pattern": "https://aaaaaaaaaasss-git-*.vercel.app",
+    "deployment_url_pattern": "https://aaaaaaaaaasss-*.vercel.app"
+  },
+  "required_supabase_settings": {
+    "authentication": {
+      "site_url": "https://aaaaaaaaaasss.vercel.app",
+      "additional_redirect_urls": [
+        "https://aaaaaaaaaasss.vercel.app",
+        "https://aaaaaaaaaasss.vercel.app/auth/callback",
+        "https://aaaaaaaaaasss.vercel.app/**",
+        "https://aaaaaaaaaasss-git-*.vercel.app",
+        "https://aaaaaaaaaasss-git-*.vercel.app/**",
+        "https://aaaaaaaaaasss-*.vercel.app",
+        "https://aaaaaaaaaasss-*.vercel.app/**",
+        "https://*.vercel.app",
+        "http://localhost:3000",
+        "localhost:3000"
+      ]
+    },
+    "cors_origins": [
+      "https://aaaaaaaaaasss.vercel.app",
+      "https://aaaaaaaaaasss-git-*.vercel.app",
+      "https://aaaaaaaaaasss-*.vercel.app",
+      "https://*.vercel.app",
+      "http://localhost:3000",
+      "localhost:3000"
+    ]
+  },
+  "environment_variables": {
+    "production": {
+      "VITE_SUPABASE_URL": "https://yvzdobyawqcrwwfwkiyf.supabase.co",
+      "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2emRvYnlhd3Fjcnd3ZndraXlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1NjgxNDUsImV4cCI6MjA3ODE0NDE0NX0.-XdmgNJhVawFaJ0my37k2_sJCKht6v_h9RHvQi1LhcA",
+      "GEMINI_API_KEY": "AIzaSyCWI3oIEOvx_MB1xVSmDweT-fShPhgyGpY",
+      "GOOGLE_MAPS_API_KEY": "AIzaSyCgcu2OEs4a61Dw6MUGxv93609eNDVM3uI"
+    }
+  },
+  "setup_instructions": {
+    "step_1": "Deploy to Vercel and get your live URL",
+    "step_2": "Update Supabase Authentication settings with Vercel URLs",
+    "step_3": "Configure CORS origins in Supabase API settings",
+    "step_4": "Test authentication and data access on live site"
+  },
+  "quick_links": {
+    "supabase_auth_settings": "https://supabase.com/dashboard/project/yvzdobyawqcrwwfwkiyf/auth/url-configuration",
+    "supabase_api_settings": "https://supabase.com/dashboard/project/yvzdobyawqcrwwfwkiyf/settings/api",
+    "vercel_env_vars": "https://vercel.com/dashboard/[your-team]/aaaaaaaaaasss/settings/environment-variables",
+    "vercel_deployments": "https://vercel.com/dashboard/[your-team]/aaaaaaaaaasss/deployments"
+  }
+}
