@@ -53,7 +53,7 @@ const Signup: React.FC = () => {
         userEmail: formData.userEmail,
         password: formData.password,
       });
-      navigate('/dashboard');
+      navigate('/');
     } catch (err) {
       console.error('Signup error:', err);
       const errorMessage = err?.message || 'Failed to create account. Please try again.';
